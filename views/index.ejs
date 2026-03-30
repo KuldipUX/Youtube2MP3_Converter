@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube to MP3</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <div class="top-container">
+        <form action="/convert-mp3" method="POST" id="form">
+            <h1><i class="fa-brands fa-youtube"></i> Youtube 2 MP3 Converter</h1>
+            <h4>Enter the video ID</h4>
+
+            <div>
+                <input type="text" name="videoId" placeholder="video ID">
+                <button id="convert-btn">Convert</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="bottom-container">
+
+    <% if (success === null) { %>
+       
+        <div class="guide">
+            <p>How to get Video ID?</p>
+            <img src="/images/yt-guide.png" alt="How to get video ID">
+        </div>
+
+    <% } else if (success === true) { %>
+        <!-- ✅ Success -->
+        <div class="success">
+            <p><%= song_title || "" %></p>
+            <a href="<%= song_link %>" target="_blank">
+                <button id="download-btn">DOWNLOAD</button>
+            </a>
+        </div>
+
+    <% } else if (success === false) { %>
+        <!-- ❌ Error -->
+        <div class="errors">
+            <p><%= message || "Something went wrong" %></p>
+        </div>
+    <% } %>
+
+</div>
+
+</body>
+</html>

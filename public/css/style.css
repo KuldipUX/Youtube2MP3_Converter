@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+  min-height: 100vh;
+
+  /* 🔥 Better background */
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+/* 🔥 TOP CONTAINER */
+.top-container{
+  min-height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* 🔥 FORM CARD */
+#form{
+  width: 100%;
+  max-width: 600px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+
+  padding: 25px;
+
+  /* glass effect */
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* TITLE */
+#form h1{
+  font-style: italic;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+/* INPUT + BUTTON WRAPPER */
+#form div{
+  width: 100%;
+  display: flex;
+  gap: 10px;
+}
+
+/* INPUT */
+#form input{
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+/* BUTTON */
+#convert-btn{
+  padding: 12px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  color: white;
+  font-weight: bold;
+
+  transition: 0.3s ease;
+}
+
+#convert-btn:hover{
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #00c6ff;
+}
+
+/* 🔥 BOTTOM CONTAINER */
+.bottom-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* GUIDE IMAGE */
+.guide{
+  text-align: center;
+  opacity: 0.9;
+}
+
+.guide img{
+  width: 100%;
+  max-width: 420px;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+/* SUCCESS */
+.success{
+  text-align: center;
+}
+
+#download-btn{
+  margin-top: 10px;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+
+  background: #00ffcc;
+  color: black;
+  font-weight: bold;
+}
+
+/* ERROR */
+.errors{
+  color: #ff4d4d;
+  text-align: center;
+}
+
+/* 📱 MOBILE RESPONSIVE */
+@media (max-width: 600px){
+  #form div{
+    flex-direction: column;
+  }
+
+  #convert-btn{
+    width: 100%;
+  }
+
+  #form h1{
+    font-size: 1.4rem;
+  }
+}
